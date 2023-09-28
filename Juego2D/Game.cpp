@@ -12,7 +12,7 @@
 
 void Game::Init()
 {
-    _InitSDL();
+    _InitSDL(); 
     _CreateWindowAndRenderer();
     SDL_SetRenderDrawColor(_renderer, 252, 198, 3, 255);
     _destBackgroundRect.x = 0;

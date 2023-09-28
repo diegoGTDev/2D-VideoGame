@@ -51,12 +51,6 @@
     <ClCompile Include="Juego2D.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>Archivos de origen\Engine\Graphics</Filter>
-    </ClCompile>
     <ClCompile Include="Animation.cpp">
       <Filter>Archivos de origen\Engine\Graphics</Filter>
     </ClCompile>
@@ -66,20 +60,20 @@
     <ClCompile Include="Rock.cpp">
       <Filter>Archivos de origen\GameObjects</Filter>
     </ClCompile>
-    <ClCompile Include="TreesFront.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="Vector2D.cpp">
       <Filter>Archivos de origen\Engine\Physics</Filter>
-    </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="Transform.cpp">
       <Filter>Archivos de origen\Engine\Physics</Filter>
     </ClCompile>
-    <ClCompile Include="Character.cpp">
-      <Filter>Archivos de origen</Filter>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Archivos de origen\Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="TreesFront.cpp">
+      <Filter>Archivos de origen\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Archivos de origen\Engine</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -87,9 +81,6 @@
       <Filter>Archivos de origen\Exceptions</Filter>
     </ClInclude>
     <ClInclude Include="resource1.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Rock.h">
@@ -110,9 +101,6 @@
     <ClInclude Include="Vector2D.h">
       <Filter>Archivos de encabezado\Engine\Physics</Filter>
     </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>Archivos de encabezado\Engine\Graphics</Filter>
-    </ClInclude>
     <ClInclude Include="Animation.h">
       <Filter>Archivos de encabezado\Engine\Graphics</Filter>
     </ClInclude>
@@ -121,6 +109,12 @@
     </ClInclude>
     <ClInclude Include="Character.h">
       <Filter>Archivos de encabezado\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Archivos de encabezado\Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

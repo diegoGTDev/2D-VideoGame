@@ -1,35 +1,36 @@
 #include "Animation.h"
-#include "Texture.h"
+#include "TextureManager.h"
 #include<utility>
-Animation::Animation(std::string path, SDL_Renderer* renderer, int frames, float duration, int frameHeight, int frameWidth) : _texture(new Texture(std::move(path), renderer)), _frames(frames), 
-	_duration(duration),_currentTime(0.0f),_sourceRect(), _frameHeight(frameHeight), _frameWidth(frameWidth)
-{
-}
 
-void Animation::Init() {
-	_texture->Init();
-	_sourceRect.w = _frameWidth;
-	_sourceRect.h = _frameHeight;
-}
 
 void Animation::Update(double elapsedSeconds) {
 	_currentTime += elapsedSeconds;
 
-	if (_currentTime > _duration) {
-		_currentTime -= _duration;
+	if (_currentTime > _animationSpeed) {
+		_currentTime -= _animationSpeed;
 	}
 
-	auto frameIndex = int(_currentTime / _duration * _frames);
+	_spriteFrame = int(_currentTime / _animationSpeed * _frames);
 
-	_sourceRect.x = frameIndex * _frameWidth;
-	_texture->SetSourceRect(&_sourceRect);
+	_sourceRect.x = _spriteFrame * _frameWidth;
+	//_texture->SetSourceRect(&_sourceRect);
+}
+
+void Animation::SetProps(std::string textureID, SDL_Renderer* renderer, int frames, float duration, int spriteRow, int animationSpeed, SDL_RendererFlip flip)
+{
+	_textureID = std::move(textureID);
+	_spriteRow = spriteRow;
+	_animationSpeed = animationSpeed;
+	_frames = frames;
+	_flip = flip;
+
 }
 
 void Animation::Render(const SDL_Rect* destRect) const {
-	_texture->Render(destRect);
+	TextureManager::GetInstance()->Draw(_textureID, destRect->x, destRect->y, _frameWidth, _frameHeight);
 }
 
 void Animation::Release() {
-	_texture->Release();
+	TextureManager::GetInstance()->Release();
 	delete _texture;
 }

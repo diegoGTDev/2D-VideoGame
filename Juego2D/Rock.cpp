@@ -7,8 +7,7 @@ Rock::Rock(SDL_Renderer* renderer) : _renderer(renderer)
 
 void Rock::Init()
 {
-    _rockAnimation = new Animation("assets/rock.png", _renderer, 1, 0, 17, 14);
-    _rockAnimation->Init();
+    //_rockAnimation;
 
     _destRockRect.x = 500;
     _destRockRect.y = 625;
@@ -27,15 +26,15 @@ void Rock::Update(double elapsedSeconds)
     _rockXPosition -= 180 * elapsedSeconds;
     _destRockRect.x = _rockXPosition;
 
-    _rockAnimation->Update(elapsedSeconds);
+    //_rockAnimation->Update(elapsedSeconds);
 }
 
 void Rock::Render()
 {
-    _rockAnimation->Render(&_destRockRect);
+    //_rockAnimation->Render(&_destRockRect);
 }
 
 void Rock::Release() {
-    _rockAnimation->Release();
-    delete _rockAnimation;
+    ///_rockAnimation->Release();
+    //delete _rockAnimation;
 }

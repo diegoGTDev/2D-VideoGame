@@ -2,20 +2,21 @@
 #include <stdio.h>
 #include <exception>
 #include "Game.h"
+#include"Engine.h"
 #include<chrono>
 int main(int argc, char* args[]) {
-    Game game = Game();
+    
     try {
-        game.Init();
+        Engine::GetInstance()->Init();
         //Gestionar eventos
         auto lastTime = std::chrono::system_clock::now();
-        while (game.isRunning()) {
+        while (Engine::GetInstance()->isRunning()) {
             auto current = std::chrono::system_clock::now();
             std::chrono::duration<double> elapsedSeconds = current - lastTime;
-            game.HandleEvents();
+            Engine::GetInstance()->HandleEvents();
             //printf("Elapsed time: %f\n", elapsedSeconds.count());
-            game.Update(elapsedSeconds.count());
-            game.Render();
+            Engine::GetInstance()->Update(elapsedSeconds.count());
+            Engine::GetInstance()->Render();
             lastTime = current;
         }
     }
@@ -29,7 +30,7 @@ int main(int argc, char* args[]) {
 
         
     
-    game.Release();
+    Engine::GetInstance()->Release();
 
     return 0;
 }
